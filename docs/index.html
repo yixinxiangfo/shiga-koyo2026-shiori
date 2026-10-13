@@ -1,33 +1,33 @@
 <title>滋賀 紅葉巡り2026 旅のしおり｜多賀・湖東三山・彦根</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#eef2ee" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#14201c" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6ece0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#231712" media="(prefers-color-scheme: dark)">
 <style>
   :root{
-    --paper:#eef2ee;
-    --paper-raised:#f7faf6;
-    --ink:#1c2b26;
-    --ink-soft:#4c5d56;
-    --ink-faint:#7c8a83;
-    --line:rgba(28,43,38,0.14);
-    --rail-accent:#d9711f;
+    --paper:#f6ece0;
+    --paper-raised:#fbf3e8;
+    --ink:#3a2418;
+    --ink-soft:#6b4a38;
+    --ink-faint:#9c7e68;
+    --line:rgba(58,36,24,0.16);
+    --rail-accent:#c0392b;
     --font-display:"Hiragino Mincho ProN","YuMincho","Yu Mincho","Noto Serif JP",serif;
     --font-body:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
     --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='0.14' intercept='0.86'/%3E%3CfeFuncG type='linear' slope='0.14' intercept='0.86'/%3E%3CfeFuncB type='linear' slope='0.14' intercept='0.86'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   @media (prefers-color-scheme: dark){
     :root{
-      --paper:#14201c; --paper-raised:#1b2b25; --ink:#e7ece8;
-      --ink-soft:#aab8b1; --ink-faint:#7c8a83; --line:rgba(231,236,232,0.16);
+      --paper:#231712; --paper-raised:#2e1f17; --ink:#f3e7d8;
+      --ink-soft:#d8b99e; --ink-faint:#a8876c; --line:rgba(243,231,216,0.16);
     }
   }
   :root[data-theme="dark"]{
-    --paper:#14201c; --paper-raised:#1b2b25; --ink:#e7ece8;
-    --ink-soft:#aab8b1; --ink-faint:#7c8a83; --line:rgba(231,236,232,0.16);
+    --paper:#231712; --paper-raised:#2e1f17; --ink:#f3e7d8;
+    --ink-soft:#d8b99e; --ink-faint:#a8876c; --line:rgba(243,231,216,0.16);
   }
   :root[data-theme="light"]{
-    --paper:#eef2ee; --paper-raised:#f7faf6; --ink:#1c2b26;
-    --ink-soft:#4c5d56; --ink-faint:#7c8a83; --line:rgba(28,43,38,0.14);
+    --paper:#f6ece0; --paper-raised:#fbf3e8; --ink:#3a2418;
+    --ink-soft:#6b4a38; --ink-faint:#9c7e68; --line:rgba(58,36,24,0.16);
   }
 
   *{box-sizing:border-box;}
@@ -113,22 +113,28 @@
   .pages::-webkit-scrollbar{ display:none; }
 
   .day{
-    flex:0 0 100%; scroll-snap-align:start; scroll-snap-stop:always;
-    height:100%; overflow-y:auto; -webkit-overflow-scrolling:touch;
+    position:relative; flex:0 0 100%; scroll-snap-align:start; scroll-snap-stop:always;
+    height:100%; overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch;
     padding:22px 20px calc(28px + env(safe-area-inset-bottom));
     background-color:var(--paper);
     background-image:linear-gradient(180deg, color-mix(in srgb, var(--accent) 11%, var(--paper)) 0%, var(--paper) 340px), var(--grain);
     background-blend-mode:normal, soft-light;
   }
-  .day[data-i="0"]{ --accent:#d9711f; }
-  .day[data-i="1"]{ --accent:#12876a; }
-  .day[data-i="2"]{ --accent:#3557b0; }
-  @media (prefers-color-scheme: dark){
-    .day[data-i="0"]{ --accent:#f0954a; } .day[data-i="1"]{ --accent:#4fcda8; } .day[data-i="2"]{ --accent:#7fa0e6; }
+  .day-head, .day > .timeline, .day > .closing{ position:relative; z-index:1; }
+  .day-bg-illustration{
+    position:absolute; right:-18px; bottom:0; width:60vw; max-width:280px;
+    color:var(--accent); opacity:.1; pointer-events:none; z-index:0;
   }
-  :root[data-theme="dark"] .day[data-i="0"]{ --accent:#f0954a; }
-  :root[data-theme="dark"] .day[data-i="1"]{ --accent:#4fcda8; }
-  :root[data-theme="dark"] .day[data-i="2"]{ --accent:#7fa0e6; }
+  .day-bg-illustration svg{ width:100%; height:auto; display:block; }
+  .day[data-i="0"]{ --accent:#c0802a; }
+  .day[data-i="1"]{ --accent:#b23a2e; }
+  .day[data-i="2"]{ --accent:#92691b; }
+  @media (prefers-color-scheme: dark){
+    .day[data-i="0"]{ --accent:#e8a860; } .day[data-i="1"]{ --accent:#e2766a; } .day[data-i="2"]{ --accent:#d9ad5c; }
+  }
+  :root[data-theme="dark"] .day[data-i="0"]{ --accent:#e8a860; }
+  :root[data-theme="dark"] .day[data-i="1"]{ --accent:#e2766a; }
+  :root[data-theme="dark"] .day[data-i="2"]{ --accent:#d9ad5c; }
 
   .day-head{ margin-bottom:22px; }
   .day-date{ font-family:var(--font-display); font-size:46px; line-height:1; color:var(--accent); white-space:nowrap; }
@@ -219,9 +225,9 @@
       </div>
     </div>
     <ol class="stations">
-      <li><button class="station" data-target="day1" data-accent-l="#d9711f" data-accent-d="#f0954a">11/13<b>金</b></button></li>
-      <li><button class="station" data-target="day2" data-accent-l="#12876a" data-accent-d="#4fcda8">11/14<b>土</b></button></li>
-      <li><button class="station" data-target="day3" data-accent-l="#3557b0" data-accent-d="#7fa0e6">11/15<b>日</b></button></li>
+      <li><button class="station" data-target="day1" data-accent-l="#c0802a" data-accent-d="#e8a860">11/13<b>金</b></button></li>
+      <li><button class="station" data-target="day2" data-accent-l="#b23a2e" data-accent-d="#e2766a">11/14<b>土</b></button></li>
+      <li><button class="station" data-target="day3" data-accent-l="#92691b" data-accent-d="#d9ad5c">11/15<b>日</b></button></li>
     </ol>
   </div>
 </header>
@@ -257,6 +263,9 @@
   </section>
 
   <section class="day" id="day2" data-i="1">
+    <div class="day-bg-illustration" aria-hidden="true">
+      <svg viewBox="0 0 24 26"><line x1="12" y1="0" x2="12" y2="3" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="1" r="1" fill="currentColor"/><path d="M12 3 L17 7 L7 7 Z" fill="currentColor"/><rect x="9.5" y="7" width="5" height="2.5" fill="currentColor"/><path d="M12 9.5 L19 14 L5 14 Z" fill="currentColor"/><rect x="8.5" y="14" width="7" height="2.5" fill="currentColor"/><path d="M12 16.5 L21 22 L3 22 Z" fill="currentColor"/><rect x="9" y="22" width="6" height="3" fill="currentColor"/></svg>
+    </div>
     <div class="day-head">
       <span class="day-date">11<span class="slash">/</span>14<span class="dow">SAT</span></span>
       <div class="day-meta">
@@ -382,6 +391,9 @@
   </section>
 
   <section class="day" id="day3" data-i="2">
+    <div class="day-bg-illustration" aria-hidden="true">
+      <svg viewBox="0 0 24 26"><line x1="12" y1="0" x2="12" y2="3" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="1" r="1" fill="currentColor"/><path d="M12 3 L17 7 L7 7 Z" fill="currentColor"/><rect x="9.5" y="7" width="5" height="2.5" fill="currentColor"/><path d="M12 9.5 L19 14 L5 14 Z" fill="currentColor"/><rect x="8.5" y="14" width="7" height="2.5" fill="currentColor"/><path d="M12 16.5 L21 22 L3 22 Z" fill="currentColor"/><rect x="9" y="22" width="6" height="3" fill="currentColor"/></svg>
+    </div>
     <div class="day-head">
       <span class="day-date">11<span class="slash">/</span>15<span class="dow">SUN</span></span>
       <div class="day-meta">
@@ -543,7 +555,7 @@
   });
 
   root.style.setProperty('--progress', 0);
-  root.style.setProperty('--rail-accent', stations[0] ? (isDark() ? stations[0].getAttribute('data-accent-d') : stations[0].getAttribute('data-accent-l')) : '#d9711f');
+  root.style.setProperty('--rail-accent', stations[0] ? (isDark() ? stations[0].getAttribute('data-accent-d') : stations[0].getAttribute('data-accent-l')) : '#c0802a');
   stations[0] && stations[0].classList.add('active');
   window.addEventListener('load', function(){ positionTrolley(0, false); });
   positionTrolley(0, false);
